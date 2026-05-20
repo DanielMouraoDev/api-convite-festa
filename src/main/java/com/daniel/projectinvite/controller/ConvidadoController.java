@@ -40,4 +40,10 @@ public class ConvidadoController {
         ConvidadoResponseDTO response = service.atualizarStatus(id, novoStatus);
         return ResponseEntity.ok(response);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        service.deletarConvidado(id);
+        return ResponseEntity.noContent().build();
+    }
 }

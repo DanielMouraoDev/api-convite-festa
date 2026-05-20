@@ -45,4 +45,12 @@ public class ConvidadoService {
         Convidado atualizado = repository.save(convidado);
         return new ConvidadoResponseDTO(atualizado);
     }
+
+    @Transactional
+    public void deletarConvidado(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Não é possível deletar. Convidado não encontrado com o ID: " + id);
+        }
+        repository.deleteById(id);
+    }
 }

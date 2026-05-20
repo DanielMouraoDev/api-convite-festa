@@ -4,5 +4,5 @@ public enum StatusPresenca {
 
     CONFIRMADO,
     RECUSADO,
-    PRENDENTE
+    PENDENTE
 }
